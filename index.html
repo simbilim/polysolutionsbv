@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolySolutions.B.V. - Professional Solutions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADEklEQVRYCb2XTWgTQRTH/28+mrRJbdpUK7VWpVYsFIsHL148ePDgwYMgCIIgCILgwYPgwYMHD4IgCIIgCIIgCB48ePDgwYMHL3rwg4MgCIIgCIIgCIIgCIIgePC7m5nNJJvN7iZpB97sZN57897v/d+8eTOJiOifw7/A/wf4vwIjIyMsyzKGYUBVVei6DsMwoOs6VFVFPB7H9PQ0stks5ubmsLS0hEwmg1wuh0ajgWazCcuy0Ol00Ol00G634TgOOp0OXNeFrutQVRWKokBVVRiGAUmSIIoiRFGEJElQFAWapiEej2NhYQGTk5MYHx/H8PAwI4riKMuyCPKl7XYbbW1tLa2trcXr9XoNj8eD4eFhjI2NYXJyEvPz88jlcshms8hkMshms1hcXMTCwgKy2SyWlpawvLyMSqWCer0OTdNgmiZs24brushlc0gkEhgaGsLY2Bj29/cxNTWF6elpjI+PY3R0FKOjoxgZGcHAwAAGBgbQ39+P/v5+9PX1obe3Fz09Pejp6UF3dzc6OzvR3t6OtrY2tLa2oqWlBc3NzWhubkZTUxOampqQSCQQj8cRi8UQjUYRjUYRiUQQDodx//59vHz5Ei9evMCzZ8/w+PFjPHr0CA8fPsSDDw/w4N4D3L93H3fv3sXdu3dx584d3L59G7du3cLNmzdx48YNXLt2DVevXsXly5dx6dIlXLhwAefPn8e5c+dw9uxZnDlzBqdPn8apU6dw8uRJnDhxAidOnMDx48dx7NgxHD16FEeOHMHhw4dx6NAhHDx4EAcOHMD+/fuxb98+7N27F3v27MHu3bvR3d2Nzs5OdHR0oL29HW1tbWhtbUVLSwuam5vR1NSExsZGNDQ0oL6+HnV1daipqUE0GkUkEkE4HEYoFEIwGEQgEIDf74fP54PX64XH44HL5YLD4YDdbofNZoPVaoXFYoHZbIbJZILRaIRer4dOp4NGo4Gqqvj5+Tna7TZaLQ1Wq9VisVqsVovVYrVYLFaLxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwWi8VisVgsln8Af1f7TfEbaDgAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAABE5JREFUeJzt3U9oXFUcxvHvPJO0TZukaZo2/7fJ+K/WVhsrtSJYQQQXggsRXIiCCxeuXLhx4cKFCxcuXLhw4cKFC1e6cOFCRBAEQRBEEARBEFy4cOHChQsXLly4cOHChQsXLlzo4sz83ZlJJpmZO++9OXcm7wc+hJD7nvObeS/nvZOZaQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAnEVhF4B4W15eZs1mU5PJZG4ymcyybtsVRdH/+r+/H4/H5e3tbfZ4PC6Px+Nyu92ueDyeFy9eLJycnFQbGxt3ut3u1wRcPAQ6hJaXl1k8Hpdms5ltNBr5hYUFdnh4uD49PV0+PT1drlar7enpaTYeH/P5+TmfnZ3zyclJfnIyLo9Go3J0dFS+vLzMO50Oa7fbvNVqeVqtVqPd7o662+02ut1uo9PpNLrd7s7Ozs5GtVrdrFarp/V6fWN7e3u7Xq+v1+v19Xq9vlWv17fq9fpao9Go1mq1aq1Wu6pWq+VKpVIql8slhUIhX8gX8oV8Ps/z+RzP53M8l8vxXC7Hc9kci2ez0Ww2y7LZLM9ks1c+++NutysXvW5XLnrdrlz0ut1G36eu7u8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECqzc3NsWQymavValMrKytjKysrY4uLi+yXH39kP/30E/v555/Z9PQMe+ONN9ibm5vsrXfe5q+9/hpfWFjgxWJRvV5vt9frdXs8Hre73e62x+NZ8/l8a16vd8Xv96/6fL5ln8+35PP5lvx+/5Lf71/0+/2LPp9v3ufzzXm93hmv1zvj8XhmPB7PtNvtnna73VNut3va5XJNuVyuSafTOeF0Oifz+fyEy+WadLlck3a73ajX6510Op1jdrx9fHzM7Hj7xMSE2fH2zs7OcbvdPjY6OjrmcDhGR0ZGRqvV6ujIyMhoLpddymqyS9ls9kwm41kwm81O+/3+U5lMZsLlck3m8/lxp9M5ZrfbR61Wq9VqtVofHx8fdrvdQ6VS6ajo6Hd7PJ4hmYwhGTO5brfXa5PJrVJZLRVXxWKZDQ0NORYWFhjH+5e6rFZbZWBgwDo4OGipHVaJjI4V8vk8e7n/7PZ6vV17l9fr9bq93lc8Hs+LXq/3Ra/X+4LH43nR4/E8b7I4X/B4PM97vd7nvV7vCx6P5wWPx/Oix+N52ePxvOTxeF7yeDwveTyeFz0ez4sej+cFj8fzgsfjedHj8TznYfczGRw4n8+3Ojw8LJeL5VdKpXJ3frxcKne7vfKQwUGHw2G3262Ojo6OdaAg4b6NiYnJOZPJdCOVSuV6cjKZVtM1NjY2/iQYHx8vt1qtj+vj40uNTCZ7qFarv1+tVn+vVqsZhOJEJnOok8kcNtJp1Egm0+FatVo5bzabJzYbja88L9Wq4mC1Hre0kMv1ur3f67P96aNOp1Pta/Ynm+0Pm41Gr9fr9dZms9HodDrd7XZbdrud53I5lsvlWDabZdlslmWzWZbNZlkmm2HpbDqbSaczy0tLS2upVOqo0WgU6n20+vT0tNBut0u73Xar1WoGRVGCrVbLpapqsNVqBVqtVqDVagVarVag1WoFhBABIYTC6XS63W63u9xut7varXZXq91a/R8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wPL/4JtqZDQ1xzQ+9MRlAAAAABJRU5ErkJggg==">
+    
+    <!-- Shoelace CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0.5rem 0 0 0;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .info-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-content {
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+        
+        .validation-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .validation-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .email-protection {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        sl-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1 class="company-name">PolySolutions.B.V.</h1>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.95rem; line-height: 1.5; opacity: 0.9; margin: 0;">
+                        Offering strategic and tactical consultancy services with expertise in business development and product management, alongside developing and selling proprietary web applications.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="info-section">
+                    <div class="info-title">
+                        <sl-icon name="geo-alt-fill"></sl-icon>
+                        Address
+                    </div>
+                    <div class="info-content">
+                        Klarinetstraat 6<br>
+                        4462MB Goes<br>
+                        The Netherlands
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <div class="info-title">
+                        <sl-icon name="receipt"></sl-icon>
+                        VAT Number (BTW)
+                    </div>
+                    <div class="info-content">
+                        <strong>NL865437257B01</strong><br>
+                        <a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="validation-link">
+                            → Validate on official EU VIES system
+                        </a><br>
+                        <small style="color: #7f8c8d; font-style: italic; margin-top: 0.25rem; display: block;">
+                            Enter "NL" and "865437257B01" to verify
+                        </small>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <div class="info-title">
+                        <sl-icon name="building"></sl-icon>
+                        Business Registration (KVK)
+                    </div>
+                    <div class="info-content">
+                        90744306<br>
+                        <a href="https://www.kvk.nl/bestellen/#/90744306000056448880" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="validation-link">
+                            → View business registration
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <div class="info-title">
+                        <sl-icon name="envelope-fill"></sl-icon>
+                        Contact
+                    </div>
+                    <div class="info-content">
+                        <span id="email-display">Click to reveal email address</span>
+                        <sl-button id="email-btn" variant="text" size="small" style="margin-left: 0.5rem;">
+                            <sl-icon name="eye" slot="prefix"></sl-icon>
+                            Show Email
+                        </sl-button>
+                        <div class="email-protection">
+                            Email address is protected from spam bots
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                © 2024 PolySolutions.B.V. All rights reserved.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Shoelace JS -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js"></script>
+    
+    <!-- Email protection script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailBtn = document.getElementById('email-btn');
+            const emailDisplay = document.getElementById('email-display');
+            
+            // Email parts stored separately and obfuscated
+            const emailParts = {
+                user: 'info',
+                domain: 'polysolutionsbv',
+                tld: 'com'
+            };
+            
+            emailBtn.addEventListener('click', function() {
+                const email = emailParts.user + '@' + emailParts.domain + '.' + emailParts.tld;
+                emailDisplay.innerHTML = `<a href="mailto:${email}" class="validation-link">${email}</a>`;
+                emailBtn.style.display = 'none';
+            });
+            
+            // Additional protection: only reveal email after user interaction
+            let interactionDetected = false;
+            document.addEventListener('mousemove', function() {
+                if (!interactionDetected) {
+                    interactionDetected = true;
+                    // Enable email revelation only after human interaction
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
